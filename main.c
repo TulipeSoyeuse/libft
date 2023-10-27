@@ -8,4 +8,5 @@ int	main(int ac, char **av)
 	{
 		res = ft_memset(av[1], '(', 8);
 	}
+	
 }

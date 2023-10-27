@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 19:17:25 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/27 20:11:39 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/10/27 20:06:44 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/10/27 20:12:09 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ft.h
-#define ft.h
+#include "ft.h"
 
-#include <stddef.h>
-#include <unistd.h>
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
 
-size_t	ft_strlen(const char *s);
-void	*memset(void *b, int c, size_t len);
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-#endif
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+	}
+}
