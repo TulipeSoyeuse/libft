@@ -1,42 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 21:13:38 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/30 13:24:46 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/10/30 12:38:23 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/10/30 13:25:12 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
-
-void	*ft_memset(void *b, int c, size_t len)
+int	get_signe(const char *str)
 {
-	unsigned int	i;
-	char			*str;
-	char			val;
+	if (str[0] == '-')
+		return (-1);
+	else
+		return (1);
+}
 
-	str = (char *) b;
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	res;
+
 	i = 0;
-	val = (unsigned char) c;
-	while (str[i] && i < len - 1)
+	res = 0;
+	if (str[0] < '0' || str[0] > '9')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		str[i] = val;
+		res = res * 10 + str[i] - 48;
 		i++;
 	}
-	return (str);
+	return (res * get_signe(str));
 }
 
 // int	main(int ac, char **av)
 // {
-// 	char	*res;
+// 	int	res;
 
-// 	res = NULL;
+// 	res = 0;
 // 	if (ac > 1)
 // 	{
-// 		res = ft_memset(av[1], '(', 8);
+// 		res = ft_atoi(av[1]);
 // 	}
-// 	ft_putstr_fd(res, 0);
+// 	ft_putnbr_fd(res, 0);
 // }

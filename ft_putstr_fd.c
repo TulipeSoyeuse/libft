@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:06:44 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/27 20:12:09 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/10/30 12:34:04 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ void	ft_putstr_fd(char *s, int fd)
 	while (s[i])
 	{
 		ft_putchar_fd(s[i], fd);
+		i++;
 	}
 }

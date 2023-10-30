@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 19:17:25 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/30 13:21:11 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/10/30 12:59:43 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/10/30 13:09:14 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ft
-#define ft
+#include "ft.h"
 
-#include <stddef.h>
-#include <unistd.h>
-#include <stdio.h>
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nbr;
 
-size_t	ft_strlen(const char *s);
-void	*ft_memset(void *b, int c, size_t len);
-int		ft_atoi(const char *str);
-void	ft_putnbr_fd(int n, int fd);
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-#endif
+	nbr = n;
+	if (nbr < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nbr *= -1;
+	}
+	if (nbr > 9)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putnbr_fd(nbr % 10, fd);
+	}
+	else
+		ft_putchar_fd((char) nbr + 48, fd);
+}
