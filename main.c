@@ -2,12 +2,10 @@
 
 int	main(int ac, char **av)
 {
-	int	res;
-
-	res = 0;
 	if (ac > 1)
 	{
-		res = ft_atoi(av[1]);
+		ft_bzero(av[1], ft_atoi(av[2]));
 	}
-	ft_putnbr_fd(res, 0);
+	printf("str :%s\n", av[1]);
+	printf("after nbytes :%s\n", &av[1][ft_atoi(av[2])]);
 }

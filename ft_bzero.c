@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:26:35 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/30 19:11:59 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/10/30 19:47:07 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,22 @@
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned int	i;
+	char			*str;
 
 	i = 0;
+	str = s;
 	while (i < n)
 	{
-		s[i] = 0;
+		str[i] = 0;
 		i++;
 	}
 }
+// int	main(int ac, char **av)
+// {
+// 	if (ac > 1)
+// 	{
+// 		ft_bzero(av[1], ft_atoi(av[2]));
+// 	}
+// 	printf("str :%s\n", av[1]);
+// 	printf("after nbytes :%s\n", &av[1][ft_atoi(av[2])]);
+// }
