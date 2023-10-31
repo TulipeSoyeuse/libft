@@ -1,11 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/10/31 15:24:58 by rdupeux          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
 
-int	main(int ac, char **av)
+// int	main(int ac, char **av)
+// {
+// 	if (ac > 1)
+// 	{
+// 		ft_bzero(av[1], ft_atoi(av[2]));
+// 	}
+// 	printf("str :%s\n", av[1]);
+// 	printf("after nbytes :%s\n", &av[1][ft_atoi(av[2])]);
+// }
+
+void	main()
 {
-	if (ac > 1)
-	{
-		ft_bzero(av[1], ft_atoi(av[2]));
-	}
-	printf("str :%s\n", av[1]);
-	printf("after nbytes :%s\n", &av[1][ft_atoi(av[2])]);
+	printf("%d\n", ('\n'));
 }

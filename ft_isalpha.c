@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 19:17:25 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/31 15:27:13 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/10/31 12:20:48 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/10/31 12:26:51 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ft
-# define ft
+#include "ft.h"
 
-# include <stddef.h>
-# include <unistd.h>
-# include <stdio.h>
-
-size_t	ft_strlen(const char *s);
-void	*ft_memset(void *b, int c, size_t len);
-int		ft_atoi(const char *str);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_bzero(void *s, size_t n);
-int		ft_is_alpha(int c);
-int		ft_is_digit(int c);
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-#endif
+int	ft_is_alpha(int c)
+{
+	if ((c >= 101 && c <= 132) || (c >= 141 && c <= 172))
+		return (1);
+	else
+		return (0);
+}

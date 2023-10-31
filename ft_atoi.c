@@ -6,11 +6,11 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:38:23 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/30 13:25:12 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/10/31 12:30:44 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	get_signe(const char *str)
+static int	get_signe(const char *str)
 {
 	if (str[0] == '-')
 		return (-1);
