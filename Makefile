@@ -1,5 +1,5 @@
 # Source, Executable, Includes, Library Defines
-HEADER	= ft.h
+HEADER	= libft.h
 SRC		= $(wildcard ft_*.c)
 OBJ		= $(SRC:.c=.o)
 
@@ -9,10 +9,10 @@ CFLAGS 	= -Wall -Wextra -Werror
 NAME	= libft.a
 
 # Link all Object Files with external Libraries into Binaries
-all: $(NAME)
+all: ar
 
-$(NAME): $(OBJ)
-	ar -rcs $@ $<
+ar: $(OBJ)
+	ar -rcs $(NAME) $^
 
 # Create a gdb/dbx Capable Executable with DEBUG flags turned on
 debug:

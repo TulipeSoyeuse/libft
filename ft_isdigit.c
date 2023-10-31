@@ -6,15 +6,15 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:25:03 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/31 15:25:32 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/10/31 16:57:42 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "libft.h"
 
-int	ft_is_digit(int c)
+int	ft_isdigit(int c)
 {
-	if (c >= 60 && c <= 71)
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);

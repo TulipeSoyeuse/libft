@@ -6,15 +6,15 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:20:48 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/31 12:26:51 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/10/31 16:57:40 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "libft.h"
 
-int	ft_is_alpha(int c)
+int	ft_isalpha(int c)
 {
-	if ((c >= 101 && c <= 132) || (c >= 141 && c <= 172))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	else
 		return (0);

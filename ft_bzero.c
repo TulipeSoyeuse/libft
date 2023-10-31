@@ -6,11 +6,11 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:26:35 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/30 19:47:07 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/10/31 15:31:48 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

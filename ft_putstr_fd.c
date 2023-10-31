@@ -6,11 +6,11 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:06:44 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/30 12:34:04 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/10/31 15:31:48 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

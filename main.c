@@ -6,11 +6,11 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/31 15:24:58 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/10/31 16:38:52 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "libft.h"
 
 // int	main(int ac, char **av)
 // {
@@ -22,7 +22,8 @@
 // 	printf("after nbytes :%s\n", &av[1][ft_atoi(av[2])]);
 // }
 
-void	main()
-{
-	printf("%d\n", ('\n'));
-}
+// int	main()
+// {
+// 	printf("%d\n", ft_isalnum('\n'));
+// 	return (0);
+// }

@@ -6,16 +6,24 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:38:23 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/31 12:30:44 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/10/31 17:10:56 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 static int	get_signe(const char *str)
 {
-	if (str[0] == '-')
-		return (-1);
-	else
-		return (1);
+	int i;
+
+	i = 0;
+	while (str[i] && !ft_isdigit(str[i]))
+	{
+		if (str[i] == '-')
+			return (-1);
+		i++;
+	}
+	return (1);
 }
 
 int	ft_atoi(const char *str)
@@ -25,9 +33,9 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	res = 0;
-	if (str[0] < '0' || str[0] > '9')
+	while (!ft_isdigit(str[i]))
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (ft_isdigit(str[i]))
 	{
 		res = res * 10 + str[i] - 48;
 		i++;
