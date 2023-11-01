@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:38:23 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/31 17:10:56 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/10/31 19:24:05 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	get_signe(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] && !ft_isdigit(str[i]))

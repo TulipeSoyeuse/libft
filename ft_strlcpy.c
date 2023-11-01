@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/01 13:13:01 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/10/31 19:48:36 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/11/01 13:13:27 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int ac, char **av)
+size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
 {
-	size_t size;
-	char *dst;
+	int	i;
 
-	size = 0;
-	dst = NULL;
-	if (ac > 1)
+	i = 0;
+	while(src[i] && i < (int) dstsize - 1)
 	{
-		size = ft_atoi(av[2]);
-		dst = malloc(ft_strlen(av[1]));
-		ft_strlcpy(dst, av[1], size);
+		dst[i] = src[i];
+		i++;
 	}
-	printf("str:%s\n", av[1]);
-	printf("res:%s\n", dst);
+	if (dstsize != 0)
+		dst[i] = 0;
+	return (ft_strlen(src));
 }
-
-// int	main()
-// {
-// 	printf("%d\n", ft_isalnum('\n'));
-// 	return (0);
-// }

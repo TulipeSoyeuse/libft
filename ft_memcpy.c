@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/01 13:13:01 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/10/31 19:16:26 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/10/31 19:40:22 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int ac, char **av)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	size_t size;
-	char *dst;
+	int	i;
 
-	size = 0;
-	dst = NULL;
-	if (ac > 1)
+	i = 0;
+	while (i < (int) n)
 	{
-		size = ft_atoi(av[2]);
-		dst = malloc(ft_strlen(av[1]));
-		ft_strlcpy(dst, av[1], size);
+		((char *) dst)[i] = ((char *) src)[i];
+		i++;
 	}
-	printf("str:%s\n", av[1]);
-	printf("res:%s\n", dst);
+	return (dst);
 }
-
-// int	main()
-// {
-// 	printf("%d\n", ft_isalnum('\n'));
-// 	return (0);
-// }
