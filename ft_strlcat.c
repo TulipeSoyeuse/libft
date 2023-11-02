@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/01 13:36:50 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/11/01 13:16:48 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/11/01 13:38:46 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main()
+size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
 {
-	char *dst;
-	char src[]="0123456789";
+	int	i;
+	int j;
+	int len;
 
-	dst = NULL;
-
-	dst = malloc(30);
-	ft_bzero(dst, 30);
-	ft_strlcpy(dst, "debut de str:", 13);
-	printf("str:%s\n", dst);
-	ft_strlcat(dst, src, 22);
-	printf("res:%s\n", dst);
+	i = 0;
+	len = ft_strlen(dst);
+	j = len;
+	while(src[i] && i < (int) dstsize - len - 1)
+	{
+		dst[j++] = src[i++];
+	}
+	if (dstsize != 0)
+		dst[j] = 0;
+	return (len + ft_strlen(src));
 }
-
-// int	main()
-// {
-// 	printf("%d\n", ft_isalnum('\n'));
-// 	return (0);
-// }
