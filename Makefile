@@ -4,7 +4,7 @@ SRC		= $(wildcard ft_*.c)
 OBJ		= $(SRC:.c=.o)
 
 # Compiler, Linker Defines
-CC		= clang
+CC		= cc
 CFLAGS 	= -Wall -Wextra -Werror
 NAME	= libft.a
 
@@ -26,5 +26,5 @@ cleanf: clean
 	rm -f $(NAME) a.out core
 
 so:
-	$(CC) -fPIC $(CFLAGS) $(SRC)
+	$(CC) -fPIC -c $(CFLAGS) $(SRC)
 	gcc -shared -o libft.so $(OBJ)

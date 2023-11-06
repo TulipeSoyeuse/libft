@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 13:26:35 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/06 15:11:35 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/11/06 15:43:54 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/11/06 16:18:03 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+/// @brief check if character is printable
+/// @param c character to check
+/// @return 1 if character printable
+int	ft_isprint(int c)
 {
-	unsigned int	i;
-	char			*str;
-
-	i = 0;
-	str = s;
-	while (i < n)
-	{
-		str[i] = 0;
-		i++;
-	}
+	if (c < 32 ||  c >= 127)
+		return (0);
+	else 
+	 return (1);
 }
-// int	main(int ac, char **av)
-// {
-// 	if (ac > 1)
-// 	{
-// 		ft_bzero(av[1], ft_atoi(av[2]));
-// 	}
-// 	printf("str :%s\n", av[1]);
-// 	printf("after nbytes :%s\n", &av[1][ft_atoi(av[2])]);
-// }

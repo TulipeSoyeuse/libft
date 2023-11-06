@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:48:36 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/01 13:18:13 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/06 15:33:00 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,19 @@ size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize
 		dst[i] = 0;
 	return (ft_strlen(src));
 }
+
+/* int	main()
+{
+	char *dst;
+	char src[]="0123456789";
+
+	dst = NULL;
+
+	dst = malloc(30);
+	ft_bzero(dst, 30);
+	ft_strlcpy(dst, "debut de str:", 13);
+	printf("str:%s\n", dst);
+	ft_strlcat(dst, src, 22);
+	printf("res:%s\n", dst);
+}
+*/
