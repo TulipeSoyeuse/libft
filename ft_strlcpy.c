@@ -6,13 +6,13 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:48:36 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/06 15:33:00 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/07 17:43:44 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *  dst, const char *  src, size_t dstsize)
 {
 	int	i;
 

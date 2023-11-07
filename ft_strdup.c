@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 18:33:02 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/11/07 15:39:36 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/11/07 16:00:36 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main()
+char	*ft_strdup(const char *s)
 {
-	char *res;
-	char *base = "  \t \t \n   \n\n\n\t";
-	res = ft_strtrim(base," \n\t");
-	printf("base:%s\nres:%s\n", base, res);
+	char	*res;
+	int		i;
+
+	i = 0;
+	res = malloc(ft_strlen(s) + 1);
+	if (!res)
+		return (NULL);
+	while(s[i])
+	{
+		res[i] = s[i];
+		i++;
+	}
+	res[i] = s[i];
+	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:18:56 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 12:50:43 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/07 18:07:52 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return ((char *) 0);
 }
+/* int	main()
+{
+	char *s1 = "FF";
+	char *s2 = "see FF your FF return FF now FF";
+	char *i1 = strnstr(s1, s2, 4);
+	char *i2 = ft_strnstr(NULL, s2, 4);
+	printf("base:%s\nres:%s\n", i1, i2);
+} */

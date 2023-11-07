@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 18:33:02 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/11/07 15:18:41 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/11/07 15:28:55 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main()
+void *ft_calloc(size_t nmemb, size_t size)
 {
-	char *res;
-	char *base = "  \t \t \n   \n\n\n\t";
-	res = ft_strtrim(base," \n\t");
-	printf("base:%s\nres:%s\n", base, res);
+	void *res;
+
+	if (!nmemb || !size)
+		return (malloc(0));
+	res = malloc(nmemb * size);
+	if (!res)
+		return (NULL);
+	else
+	{
+		ft_bzero(res, nmemb * size);
+		return (res);
+	}
 }
