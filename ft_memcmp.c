@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 12:42:12 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/11/07 10:50:45 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/11/07 10:55:21 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main()
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char *s1 = "FF";
-	char *s2 = "see FF your FF return FF now FF";
-	char *i1 = strnstr(s1, s2, 4);
-	char *i2 = ft_strnstr(NULL, s2, 4);
-	printf("base:%s\nres:%s\n", i1, i2);
+	int i;
+
+	i = 0;
+	while(i < (int) n - 1)
+	{
+		if (((unsigned char *) s1)[i] != ((unsigned char *) s2)[i])
+			return (((unsigned char *) s1)[i] - ((unsigned char *) s2)[i]);
+		i++;
+	}
+	return (((unsigned char *) s1)[i] - ((unsigned char *) s2)[i]);
 }

@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 12:42:12 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/11/07 10:41:28 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/11/07 10:47:48 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main()
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char *s1 = "FF";
-	char *s2 = "see FF your FF return FF now FF";
-	char *i1 = strnstr(s1, s2, 4);
-	char *i2 = ft_strnstr(NULL, s2, 4);
-	printf("base:%s\nres:%s\n", i1, i2);
+	int i;
+
+	i = 0;
+	while (((unsigned char *)s)[i] && i < (int) n)
+	{
+		if (((unsigned char *)s)[i] == (unsigned char) c)
+			return ((void *) &(((unsigned char *)s)[i]));
+
+		i++;
+	}
+	if (c == '\0')
+		return ((void *) &(((unsigned char *)s)[i]));
+	return (NULL);
 }

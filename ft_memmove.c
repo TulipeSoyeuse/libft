@@ -6,17 +6,20 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:43:12 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/01 12:43:12 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/07 10:39:20 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
-// void	*ft_memmove(void *dst, const void *src, size_t len)
-// {
-// 	char	*buf;
-// 	int	i;
-
-// 	buf = malloc(ft_strlen(src));
-// 	buf = ft_strlcpy(buf, src,)
-// }
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+        if (dst == NULL && src == NULL)
+                return (NULL);
+        if (dst < src)
+                ft_memcpy(dst, src, len);
+        else
+                while (len--)
+                        ((char *)dst)[len] = ((char *)src)[len];
+        return (dst);
+}

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 12:42:12 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/11/07 10:20:32 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/11/07 10:29:11 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main()
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char *s1 = "FF";
-	char *s2 = "see FF your FF return FF now FF";
-	char *i1 = strnstr(s1, s2, 4);
-	char *i2 = ft_strnstr(NULL, s2, 4);
-	printf("base:%s\nres:%s\n", i1, i2);
+	int i;
+
+	i = 0;
+	while(s1[i] && s2[i] && i < (int) n - 1)
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+		i++;
+	}
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 }

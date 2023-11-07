@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:42:32 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 12:42:12 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/11/07 00:17:34 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/11/07 00:26:01 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main()
+char	*ft_strrchr(const char *s, int c)
 {
-	char *s1 = "FF";
-	char *s2 = "see FF your FF return FF now FF";
-	char *i1 = strnstr(s1, s2, 4);
-	char *i2 = ft_strnstr(NULL, s2, 4);
-	printf("base:%s\nres:%s\n", i1, i2);
+	int	len;
+	int	i;
+
+	len = ft_strlen(s);
+	i = len;
+	while(i != 0)
+	{
+		s++;
+		i--;
+	}
+	while (i != len)
+	{
+		if (*s == (char) c)
+			return ((char *) s);
+		s--;
+		i++;
+	}
+	if (*s == (char) c)
+		return ((char *) s);
+	return (NULL);
 }

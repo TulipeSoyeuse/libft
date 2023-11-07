@@ -6,41 +6,48 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:38:23 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/10/31 19:24:05 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/07 13:02:32 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	get_signe(const char *str)
+static int ft_isspace(const char c)
 {
-	int	i;
+	if (c == ' ' || c == '\t' || c == '\v'
+	|| c == '\n' || c == '\r' || c == '\f')
+		return (1);
+	else
+		return (0);
+}
 
-	i = 0;
-	while (str[i] && !ft_isdigit(str[i]))
-	{
-		if (str[i] == '-')
-			return (-1);
-		i++;
-	}
-	return (1);
+static int	get_signe(const char c)
+{
+	if (c == '-')
+		return (-1);
+	if (c == '+' || ft_isdigit(c))
+		return (1);
+	return (0);
 }
 
 int	ft_atoi(const char *str)
 {
 	int	i;
 	int	res;
+	int signe;
 
 	i = 0;
 	res = 0;
-	while (!ft_isdigit(str[i]))
-		i++;
+	while (ft_isspace(str[0]))
+		str++;
+	signe = get_signe(str[0]);
+	if (!ft_isdigit(*str))
+		str++;
 	while (ft_isdigit(str[i]))
 	{
 		res = res * 10 + str[i] - 48;
 		i++;
 	}
-	return (res * get_signe(str));
+	return (res * signe);
 }
 
 // int	main(int ac, char **av)
