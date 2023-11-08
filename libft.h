@@ -20,6 +20,8 @@
 # include <string.h>
 # include <limits.h>
 
+#	define ABS(x) (x < 0 ? -x : x)
+
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *b, int c, size_t len);
 int		ft_atoi(const char *str);
@@ -48,5 +50,7 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-
+char	*ft_itoa(int n);
+char	**ft_split(char const *s, char c);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 #endif

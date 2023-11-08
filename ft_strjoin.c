@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:34:15 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 16:42:05 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/08 11:04:04 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char *ft_strjoin(char const *s1, char const *s2)
 	char	*res;
 	int		i;
 
+	if (!s1 || !s2)
+		return (NULL);
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
 	res = ft_calloc(1, s1len + s2len + 1);
