@@ -9,10 +9,12 @@ CFLAGS 	= -Wall -Wextra -Werror
 NAME	= libft.a
 
 # Link all Object Files with external Libraries into Binaries
-all: ar
+all: $(NAME)
 
-ar: $(OBJ)
+$(NAME): $(OBJ)
 	ar -rcs $(NAME) $^
+
+re: fclean all
 
 # Create a gdb/dbx Capable Executable with DEBUG flags turned on
 debug:
@@ -28,3 +30,5 @@ cleanf: clean
 so:
 	$(CC) -fPIC -c $(CFLAGS) $(SRC)
 	gcc -shared -o libft.so $(OBJ)
+
+.PHONY: all clean fclean re

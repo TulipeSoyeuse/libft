@@ -20,7 +20,13 @@
 # include <string.h>
 # include <limits.h>
 
-#	define ABS(x) (x < 0 ? -x : x)
+# define ABS(x) (x < 0 ? -x : x)
+
+typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+} t_list;
 
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *b, int c, size_t len);
@@ -53,4 +59,5 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 #endif
