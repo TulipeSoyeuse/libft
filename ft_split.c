@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:49:40 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/08 13:50:02 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 14:11:16 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,3 +97,17 @@ char	**ft_split(char const *s, char c)
 	}
 	return (res);
 }
+// int	main()
+// {
+// 	printf("base:%s\n",
+// 	 "      split       this for   me  !       "
+// 	);
+// 	char **result = ft_split("      split       this for   me  !       ", ' ');
+// 	char **expected = ((char*[6]){"split", "this", "for", "me", "!", ((void *)0)});
+// 	while (*result)
+// 	{
+// 		printf("%s:%s - %d\n",*expected, *result, strcmp(*result, *expected));
+// 		result++;
+// 		expected++;
+// 	}
+// }

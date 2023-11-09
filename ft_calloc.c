@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:18:41 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 15:28:55 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 15:50:28 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 void *ft_calloc(size_t nmemb, size_t size)
 {
 	void *res;
+	int	bytes;
 
+	bytes = nmemb * size;
+	if (size && bytes / size != nmemb)
+		return (NULL);
 	if (!nmemb || !size)
 		return (malloc(0));
 	res = malloc(nmemb * size);
