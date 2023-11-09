@@ -6,16 +6,16 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:18:41 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/09 15:50:28 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 15:56:07 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *res;
-	int	bytes;
+	void	*res;
+	int		bytes;
 
 	bytes = nmemb * size;
 	if (size && bytes / size != nmemb)

@@ -6,13 +6,13 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:43:20 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/08 16:26:29 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:11:48 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	static isinset(char c, const char *set)
+static int	isinset(char c, const char *set)
 {
 	while (*set)
 	{
@@ -22,14 +22,15 @@ int	static isinset(char c, const char *set)
 	}
 	return (0);
 }
-char static *get_start(char *start, const char *set)
+
+static char	*get_start(char *start, const char *set)
 {
 	while (*start && isinset(*start, set))
 		start++;
 	return ((char *) start);
 }
 
-char static *get_end(char *end, const char *set)
+static char	*get_end(char *end, const char *set)
 {
 	char	*diff;
 
@@ -43,13 +44,14 @@ char static *get_end(char *end, const char *set)
 	return ((char *) end);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	char	*start;
 	char	*end;
 	char	*res;
 	int		test;
+
 	i = 0;
 	if (!s1)
 		return (NULL);
@@ -57,7 +59,7 @@ char *ft_strtrim(char const *s1, char const *set)
 	end = get_end((char *) s1, set);
 	test = end - start + 2;
 	if (test < 0)
-		return (ft_calloc(1,1));
+		return (ft_calloc(1, 1));
 	res = ft_calloc(test, 1);
 	if (!res)
 		return (NULL);

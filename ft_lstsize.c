@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:22:25 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/09 13:32:21 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:01:32 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	count;
+	int		count;
 	t_list	*current;
 
 	count = 0;

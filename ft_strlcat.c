@@ -6,19 +6,20 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:16:48 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 17:46:13 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:08:26 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-static	char *getd(char *d, size_t n)
+
+static char	*getd(char *d, size_t n)
 {
 	while (n-- != 0 && *d)
-	d++;
+		d++;
 	return (d);
 }
 
-size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	char		*d;
 	const char	*s;

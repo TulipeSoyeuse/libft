@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 16:34:15 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/09 16:07:16 by rdupeux          ###   ########.fr       */
+/*   Created: 2023/11/09 14:52:09 by rdupeux           #+#    #+#             */
+/*   Updated: 2023/11/09 16:00:51 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	s1len;
-	size_t	s2len;
-	char	*res;
-	int		i;
+	t_list	*current_res;
+	t_list	*res;
+	t_list	*current;
+	t_list	*next;
 
-	if (!s1 || !s2)
+	if (!lst || !f || !del)
 		return (NULL);
-	s1len = ft_strlen(s1);
-	s2len = ft_strlen(s2);
-	res = ft_calloc(1, s1len + s2len + 1);
+	res = ft_lstnew((*f)(lst->content));
 	if (!res)
 		return (NULL);
-	i = 0;
-	while (*s1)
+	current = lst->next;
+	while (current)
 	{
-		res[i++] = *s1;
-		s1++;
+		current_res = ft_lstnew((*f)(current->content));
+		if (!current_res)
+			return (NULL);
+		ft_lstadd_back(&res, current_res);
+		next = current->next;
+		(*del)(current->content);
+		current = next;
 	}
-	while (*s2)
-	{
-		res[i++] = *s2;
-		s2++;
-	}
+	ft_lstlast(res)->next = NULL;
 	return (res);
 }

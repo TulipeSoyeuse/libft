@@ -6,11 +6,11 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 23:45:41 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/06 23:48:47 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:12:19 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);

@@ -6,11 +6,11 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:23:19 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/06 23:43:23 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:12:29 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);

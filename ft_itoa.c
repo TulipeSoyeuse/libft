@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:25:58 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/08 12:48:47 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 15:58:48 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	*reverse(char *tmp, int end)
 	if (!res)
 		return (NULL);
 	i = 0;
-	while(end > -1)
+	while (end > -1)
 		res[i++] = tmp[end--];
 	return (res);
 }
@@ -38,12 +38,12 @@ char	*ft_itoa(int n)
 	nbr = ABS(nbr);
 	if (n == 0)
 	{
-		res = ft_calloc(2,1);
+		res = ft_calloc(2, 1);
 		res[0] = '0';
 		return (res);
 	}
 	while (nbr)
-    {
+	{
 		temp[i++] = 48 + (nbr % 10);
 		nbr /= 10;
 	}

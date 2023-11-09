@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:18:56 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 18:07:52 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:09:49 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
+	int	i;
 
 	if (ft_strlen(needle) == 0 || len == 0)
 		return ((char *) haystack);

@@ -6,18 +6,18 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:48:36 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 17:43:44 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:08:54 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *  dst, const char *  src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	int	i;
 
 	i = 0;
-	while(src[i] && i < (int) dstsize - 1)
+	while (src[i] && i < (int) dstsize - 1)
 	{
 		dst[i] = src[i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:27:46 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/06 15:43:06 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 15:56:49 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	ft_isascii(int c)
 {
 	if (c > 127 || c < 0)
 		return (0);
-	else 
-	 return (1);
+	else
+		return (1);
 }

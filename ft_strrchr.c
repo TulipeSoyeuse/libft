@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:17:34 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 00:26:01 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:10:19 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	len = ft_strlen(s);
 	i = len;
-	while(i != 0)
+	while (i != 0)
 	{
 		s++;
 		i--;

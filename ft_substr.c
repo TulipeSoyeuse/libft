@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:11:21 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/08 11:04:34 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:12:04 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start >= ft_strlen(s))
 		len = 0;
-	res = ft_calloc(1,len + 1);
+	res = ft_calloc(1, len + 1);
 	if (!res)
 		return (NULL);
 	i = 0;
 	count = 0;
-	while(s[start] && count < len)
+	while (s[start] && count < len)
 	{
 		res[i] = s[start];
 		i++;

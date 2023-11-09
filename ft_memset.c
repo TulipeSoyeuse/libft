@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 21:13:38 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/07 10:58:16 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:03:35 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < (int) len)

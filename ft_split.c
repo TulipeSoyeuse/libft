@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:49:40 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/09 14:11:16 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:05:51 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	count_split(char const *s, char c)
 
 static int	len_split(char const *s, char c)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (*s && *s != c)
@@ -44,7 +44,7 @@ static int	len_split(char const *s, char c)
 	return (len);
 }
 
-static char* copy_split(const char *s, char c)
+static char	*copy_split(const char *s, char c)
 {
 	char	*tmp;
 	int		i;
@@ -80,11 +80,11 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	split_nb = count_split(s, c);
-	res = malloc((split_nb + 1 ) * sizeof(char *));
+	res = malloc((split_nb + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
 	res[split_nb] = NULL;
-	i =0;
+	i = 0;
 	while (*s == c && *s)
 		s++;
 	while (split_nb--)
@@ -103,10 +103,12 @@ char	**ft_split(char const *s, char c)
 // 	 "      split       this for   me  !       "
 // 	);
 // 	char **result = ft_split("      split       this for   me  !       ", ' ');
-// 	char **expected = ((char*[6]){"split", "this", "for", "me", "!", ((void *)0)});
+// 	char **expected = ((
+//	char*[6]){"split", "this", "for", "me", "!", ((void *)0)});
 // 	while (*result)
 // 	{
-// 		printf("%s:%s - %d\n",*expected, *result, strcmp(*result, *expected));
+// 		printf("%s:%s - %d\n",*expected,
+// *result, strcmp(*result, *expected));
 // 		result++;
 // 		expected++;
 // 	}

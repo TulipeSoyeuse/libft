@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:58:54 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/09 14:38:54 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/09 15:59:57 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
-		return;
+		return ;
 	(*del)(lst->content);
 	free(lst);
 }
