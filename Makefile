@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/13 11:12:25 by rdupeux           #+#    #+#              #
+#    Updated: 2023/11/13 11:12:27 by rdupeux          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # Source, Executable, Includes, Library Defines
 HEADER		=	libft.h
 SRC			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
