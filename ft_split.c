@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:49:40 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/09 16:05:51 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/15 13:45:36 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	count_split(char const *s, char c)
 		else
 		{
 			count++;
-			while (*s != c)
+			while (*s != c && *s)
 				s++;
 		}
 	}
