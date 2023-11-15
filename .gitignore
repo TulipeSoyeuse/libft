@@ -54,3 +54,4 @@ dkms.conf
 #usuals
 a.out
 libftTester
+main.c
