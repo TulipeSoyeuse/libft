@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:52:09 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/09 16:40:52 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/15 14:00:37 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*res;
 	t_list	*current;
 	t_list	*next;
+	void	*set;
 
 	if (!lst || !f || !del)
 		return (NULL);
@@ -27,12 +28,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	current = lst->next;
 	while (current)
 	{
-		current_res = ft_lstnew((*f)(current->content));
+		set = (*f)(current->content);
+		current_res = ft_lstnew(set);
 		if (!current_res)
-			return (NULL);
+		{
+			del(set);
+			ft_lstclear(&res, *del);
+			return (res);
+		}
 		ft_lstadd_back(&res, current_res);
 		next = current->next;
-		(*del)(current->content);
 		current = next;
 	}
 	ft_lstlast(res)->next = NULL;
@@ -50,7 +55,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // 	__delNum++;
 // }
 
-// int	main()
+// int	main(void)
 // {
 // 	t_list *l = ft_lstnew(strdup(" 1 2 3 "));
 // 	t_list *ret;
