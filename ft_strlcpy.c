@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:48:36 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/15 12:15:36 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/15 14:09:03 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	if (!dst || !src)
-		return (0);
 	if (dstsize != 0)
 	{
 		while (src[i] && i < dstsize - 1)
