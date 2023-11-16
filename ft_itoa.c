@@ -6,13 +6,13 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:25:58 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/16 14:02:30 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/16 14:16:47 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_abs(int a)
+static long	ft_abs(long a)
 {
 	if (a < 0)
 		return (-a);
