@@ -6,11 +6,18 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:25:58 by rdupeux           #+#    #+#             */
-/*   Updated: 2023/11/09 15:58:48 by rdupeux          ###   ########.fr       */
+/*   Updated: 2023/11/16 14:02:30 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_abs(int a)
+{
+	if (a < 0)
+		return (-a);
+	return (a);
+}
 
 static char	*reverse(char *tmp, int end)
 {
@@ -35,7 +42,7 @@ char	*ft_itoa(int n)
 
 	nbr = n;
 	i = 0;
-	nbr = ABS(nbr);
+	nbr = ft_abs(nbr);
 	if (n == 0)
 	{
 		res = ft_calloc(2, 1);
@@ -51,7 +58,7 @@ char	*ft_itoa(int n)
 		temp[i++] = '-';
 	return (reverse(temp, i - 1));
 }
-// int	main()
+// int	main(void)
 // {
 // 	int a;
 
