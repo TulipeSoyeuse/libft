@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+         #
+#    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 11:12:25 by rdupeux           #+#    #+#              #
-#    Updated: 2023/11/13 11:12:27 by rdupeux          ###   ########.fr        #
+#    Updated: 2024/01/13 12:32:56 by romain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,18 +23,26 @@ BONUS		=	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 				ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
 				ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 OBJ			=	$(SRC:.c=.o)
+
+OBJ_DEBUG	=	$(SRC:.c=_debug.o)
 BONUS_OBJ	=	$(BONUS:.c=.o)
 
-SRC_BONUS =\
 # Compiler, Linker Defines
 CC		= cc
 CFLAGS 	= -Wall -Wextra -Werror
 NAME	= libft.a
+DEBUG	= libft_debug.a
 
 # Link all Object Files with external Libraries into Binaries
 all: $(NAME)
 
 re: fclean all
+
+%_debug.o : %.c
+	$(CC) -c $(CFLAGS) -g3 $< -o $@
+
+$(DEBUG): $(OBJ_DEBUG)
+	ar -rcs $@ $^
 
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $^
@@ -45,16 +53,16 @@ debug:
 
 # Clean Up Objects, Exectuables, Dumps out of source directory
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ) $(OBJ_DEBUG)
 
 fclean: clean
-	rm -f $(NAME) a.out core
+	rm -f $(NAME) a.out core $(DEBUG)
 
 so:
 	$(CC) -fPIC -c $(CFLAGS) $(SRC)
 	gcc -shared -o libft.so $(OBJ)
 
 bonus: $(OBJ) $(BONUS_OBJ)
-	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ) 
 
 .PHONY: all clean fclean re
