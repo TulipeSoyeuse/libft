@@ -1,49 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:39:36 by rdupeux           #+#    #+#             */
-/*   Updated: 2024/02/17 18:23:36 by romain           ###   ########.fr       */
+/*   Created: 2024/02/17 18:15:20 by romain            #+#    #+#             */
+/*   Updated: 2024/02/17 19:00:37 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+double	ft_atof(char *val)
 {
-	char	*res;
-	int		i;
+	size_t	i;
+	double	buf_d;
+	double	res;
+	char	*buf;
 
 	i = 0;
-	res = malloc(ft_strlen(s) + 1);
-	if (!res)
-		return (NULL);
-	while (s[i])
-	{
-		res[i] = s[i];
+	res = 0;
+	while (val[i] && val[i] != '.')
 		i++;
-	}
-	res[i] = s[i];
-	return (res);
-}
-
-char	*ft_strndup(const char *s, int len)
-{
-	char	*res;
-	int		i;
-
-	i = 0;
-	res = malloc(ft_strlen(s) + 1);
-	if (!res)
-		return (NULL);
-	while (s[i] && len-- > 1)
+	if (val[i] == '.')
 	{
-		res[i] = s[i];
-		i++;
+		buf = ft_strndup(val, i);
+		res = ft_atoi(buf);
+		free(buf);
 	}
-	res[i] = s[i];
-	return (res);
+	else
+		return (0);
+	buf_d = ft_atoi(&val[++i]);
+	while (buf_d > 1)
+		buf_d /= 10;
+	return (res + buf_d);
 }
