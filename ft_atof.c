@@ -6,7 +6,7 @@
 /*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:15:20 by romain            #+#    #+#             */
-/*   Updated: 2024/02/18 11:58:04 by rdupeux          ###   ########.fr       */
+/*   Updated: 2024/02/18 12:15:13 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,11 @@ double	ft_atof(char *val)
 	res = 0;
 	while (val[i] && val[i] != '.')
 		i++;
-	if (val[i] == '.')
-	{
-		buf = ft_strndup(val, i);
-		res = ft_atoi(buf);
-		free(buf);
-	}
-	else
+	buf = ft_strndup(val, i);
+	buf[i] = 0;
+	res = ft_atoi(buf);
+	free(buf);
+	if (!val[i])
 		return (res);
 	buf_d = ft_atoi(&val[++i]);
 	while (buf_d > 1)
