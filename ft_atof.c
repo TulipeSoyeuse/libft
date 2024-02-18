@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rdupeux <rdupeux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:15:20 by romain            #+#    #+#             */
-/*   Updated: 2024/02/17 19:00:37 by romain           ###   ########.fr       */
+/*   Updated: 2024/02/18 11:58:04 by rdupeux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ double	ft_atof(char *val)
 		free(buf);
 	}
 	else
-		return (0);
+		return (res);
 	buf_d = ft_atoi(&val[++i]);
 	while (buf_d > 1)
 		buf_d /= 10;
